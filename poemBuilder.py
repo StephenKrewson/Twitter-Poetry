@@ -76,6 +76,8 @@ def superFunction(string, num):
     poem = buildPoem(string, num)
     storeResults(poem[1])
     engine = pyttsx.init()
+    rate = engine.getProperty('rate')
+    engine.setProperty('rate', rate-75)
     index = 0
     for i in poem[1]:
 		index += 1

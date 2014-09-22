@@ -74,7 +74,7 @@ def storeResults(poem):
 def superFunction(string, num):
     """Puts everything together!"""
     poem = buildPoem(string, num)
-    storeResults(poem[1])
+    #storeResults(poem[1])
     engine = pyttsx.init()
     rate = engine.getProperty('rate')
     engine.setProperty('rate', rate-75)

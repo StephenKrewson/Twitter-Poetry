@@ -80,13 +80,13 @@ def superFunction(string, num):
     engine.setProperty('rate', rate-75)
     index = 0
     for i in poem[1]:
-		index += 1
-		print i
-		engine.say(i)
-		engine.runAndWait()
-		if index % 4 == 0:
-			print
-	#' |||| '.join(i)
+        index += 1
+        print i
+	#engine.say(i)
+	#engine.runAndWait()
+        if index % 4 == 0:
+            print
+    #' |||| '.join(i)
 ### SECTION 3: MAIN CODE ###
 ############################
 superFunction(sys.argv[1], sys.argv[2])

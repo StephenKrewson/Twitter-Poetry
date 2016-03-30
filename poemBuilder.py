@@ -82,8 +82,8 @@ def superFunction(string, num):
     for i in poem[1]:
         index += 1
         print i
-	#engine.say(i)
-	#engine.runAndWait()
+        engine.say(i)
+        engine.runAndWait()
         if index % 4 == 0:
             print
     #' |||| '.join(i)

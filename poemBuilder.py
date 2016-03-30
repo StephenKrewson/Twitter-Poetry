@@ -7,10 +7,10 @@ from nltk.tokenize import *
 from nltk import FreqDist
 
 # (1.1) Authenticate to Twitter using OAuth
-api = twitter.Api(consumer_key='effBwIQZJUWIJvOqpw5y5A',
-                  consumer_secret='AsNNfAsaVtK6PrpDne1YqFqQIreG1r2HF2AW52cU64',
-                  access_token_key='403021421-XixLOL3CimN6ZZQ567jJLV2xCJhhW0mj1axcJZyu',
-                  access_token_secret='8PDjjA8tOnaKmMZZ0JUJch9TLdtXTIzE6T0sMpGZw')
+api = twitter.Api(consumer_key='',
+                  consumer_secret='',
+                  access_token_key='',
+                  access_token_secret='')
 
 # (1.2) Store NLTK libraries (runtime atrocious if these are in the functions)
 books = nltk.corpus.gutenberg.fileids()

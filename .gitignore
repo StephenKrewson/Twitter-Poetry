@@ -1,2 +1,5 @@
-# Can ignore the textfile outputs
+# Ignore the logged poems from program runs
 *.txt
+
+# Ignore configuration file for API keys
+*config.py

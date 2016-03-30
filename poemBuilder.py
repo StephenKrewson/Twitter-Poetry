@@ -1,16 +1,20 @@
-### SECTION 1: PREPARATION ###
-##############################
-import re, sys, nltk, twitter, string, HTMLParser, pyttsx
-from nltk.corpus import cmudict
-from random import choice, randint
-from nltk.tokenize import *
-from nltk import FreqDist
+import HTMLParser
+import nltk
+import pyttsx
+import re
+import string
+import sys
+import twitter
 
-# (1.1) Authenticate to Twitter using OAuth
-api = twitter.Api(consumer_key='',
-                  consumer_secret='',
-                  access_token_key='',
-                  access_token_secret='')
+from random import choice, randint
+from config import twitter_keys
+
+# Connect with keys from apps.twitter.com - "XS Collaborative"
+api = twitter.Api(consumer_key=twitter_keys['consumer_key'],
+	consumer_secret=twitter_keys['consumer_secret'],
+	access_token_key=twitter_keys['access_token_key'],
+	access_token_secret=twitter_keys['access_token_secret']
+)
 
 # (1.2) Store NLTK libraries (runtime atrocious if these are in the functions)
 books = nltk.corpus.gutenberg.fileids()
@@ -89,5 +93,7 @@ def superFunction(string, num):
     #' |||| '.join(i)
 ### SECTION 3: MAIN CODE ###
 ############################
+# 1. search string
+# 2. Number of tweets
 superFunction(sys.argv[1], sys.argv[2])
 

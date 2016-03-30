@@ -1,1 +1,2 @@
-.txt
+# Can ignore the textfile outputs
+*.txt

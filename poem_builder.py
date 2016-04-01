@@ -1,3 +1,13 @@
+# Stephen Krewson, "Twitter Poetry Generator" (April 2013)
+# stephen.krewson@gmail.com
+# 
+# Uses the Python wrapper for the Twitter API to search for tweets
+# containing a search term(s) passed in on the CL. Cleans the text
+# and runs through the Natural Language Toolkit (NLTK) lexical stress
+# dictionary to make roughly accentual verse (four stresses per line).
+# Uses the pyttsx text-to-speech functionality to delay and "read" the
+# poem's stanzas in real time.
+
 import HTMLParser
 import nltk
 import pyttsx
@@ -10,18 +20,19 @@ from random import choice, randint
 from config import twitter_keys
 
 # Connect with keys from apps.twitter.com - "XS Collaborative"
+# Do NOT check keys into Git; use a config.py file in the same
+# directory and store them in a dictionary, which can be imported
+# as, for instance, "twitter_keys"
 api = twitter.Api(consumer_key=twitter_keys['consumer_key'],
 	consumer_secret=twitter_keys['consumer_secret'],
 	access_token_key=twitter_keys['access_token_key'],
 	access_token_secret=twitter_keys['access_token_secret']
 )
 
-# (1.2) Store NLTK libraries (runtime atrocious if these are in the functions)
+# Store NLTK libraries (runtime atrocious if these are in the functions)
 books = nltk.corpus.gutenberg.fileids()
 lexicon = nltk.corpus.cmudict.dict()
 
-### SECTION 2: FUNCTIONS ###
-############################
 def stripWord(word):
     """Returns tuple of stripped word, lexical stress count"""
     stress = 0
@@ -91,9 +102,12 @@ def superFunction(string, num):
         if index % 4 == 0:
             print
     #' |||| '.join(i)
-### SECTION 3: MAIN CODE ###
-############################
-# 1. search string
-# 2. Number of tweets
-superFunction(sys.argv[1], sys.argv[2])
 
+# The program is invoked as follows. Note that it only runs with Python 2.7.
+#
+# $ python ./poem_builder.py hippopotamus 14
+#
+# The first CL argument is the search term and the second is the number of
+# tweets with that search term to pull down from Twitter.
+
+superFunction(sys.argv[1], sys.argv[2])
